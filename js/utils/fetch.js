@@ -27,5 +27,13 @@ angular.module('app').factory('fetch', [ '$q', function($q){
     }, 500);
 
     return deferred.promise;
+  };
+
+  function isEmpty(obj){
+    for(var i in obj) if(obj.hasOwnProperty(i)){
+      return false;
+    }
+    return true;
   }
 }]);
+
