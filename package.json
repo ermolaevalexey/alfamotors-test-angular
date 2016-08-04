@@ -1,0 +1,9 @@
+{
+  "name": "alfamotors-test",
+  "version": "1.0.0",
+  "description": "Тестовое задание для Alfamotors",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
