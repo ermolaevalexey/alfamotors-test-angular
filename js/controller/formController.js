@@ -8,8 +8,10 @@
 		function($scope, fetch) {
 			$scope.user = {};
 			$scope.passTheData = function() {
-				console.log($scope);
-				console.log($scope.user);
+				fetch($scope.user).then(
+    			function(success){ console.log(success);},
+    			function(errors){ console.log(errors); }
+				);
 			};
 		}
 	]);

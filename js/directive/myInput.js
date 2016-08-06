@@ -21,6 +21,9 @@
 				if (attrs.required !== undefined) {
 					input.attr('required', true);
 				}
+				if (attrs.name === 'phone') {
+					input.attr('ui-mask', '+7 (999) 999-9999');
+				}
 			},
 			templateUrl: '/js/partials/my-input.html'
 		}

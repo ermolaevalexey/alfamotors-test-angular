@@ -4,7 +4,7 @@
   "description": "Тестовое задание для Alfamotors",
   "main": "index.js",
   "scripts": {
-  	"start": "http-server -a localhost -p 8050 ."
+    "start": "http-server -a localhost -p 8050 ."
   },
   "dependencies": {
     "angular": "^1.5.8",

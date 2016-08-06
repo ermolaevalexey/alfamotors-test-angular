@@ -18,6 +18,10 @@ angular.module('app').factory('fetch', [ '$q', function($q){
 			errors['email'] = ['email_in_use'];
 		}
 
+		if (phone == '+71234567890') {
+			errors['phone'] = ['already_in_use'];
+		}
+
 		setTimeout(function(){
 			if(isEmpty(errors)){
 				deferred.resolve();
