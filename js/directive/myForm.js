@@ -6,7 +6,7 @@
   
 	.directive('myForm', myFormDirective);
 
-	 function myFormDirective() {
+	function myFormDirective() {
 		return {
 	  		restrict: 'E',
 	  		scope: {},
