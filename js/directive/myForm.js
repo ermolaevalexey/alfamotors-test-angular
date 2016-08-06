@@ -2,7 +2,7 @@
 
 (function(w) {
   
-  angular.module('app')
+	angular.module('app')
   
 	.directive('myForm', function() {
 		return {
