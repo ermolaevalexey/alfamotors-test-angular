@@ -1,12 +1,10 @@
 'use strict';
 
-(function (w) {
+(function(w) {
 
 	angular.module('app')
 
-	.directive('myInput', myInputDirective);
-
-	function myInputDirective() {
+	.directive('myInput', function() {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -23,6 +21,6 @@
 			},
 			templateUrl: '/js/partials/my-input.html'
 		}
-	}
+	});
 
 })(window);

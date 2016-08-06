@@ -4,9 +4,7 @@
   
   angular.module('app')
   
-	.directive('myForm', myFormDirective);
-
-	function myFormDirective() {
+	.directive('myForm', function() {
 		return {
 	  		restrict: 'E',
 	  		scope: {},
@@ -16,6 +14,6 @@
 	  		},
 	  		templateUrl: '/js/partials/my-form.html',
 		}
-	}
+	});
 
 })(window);
