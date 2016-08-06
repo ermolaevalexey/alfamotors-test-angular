@@ -23,6 +23,7 @@
 				}
 				if (attrs.name === 'phone') {
 					input.attr('ui-mask', '+7 (999) 999-9999');
+					input.attr('ui-options', 'addDefaultPlaceholder(true)');
 				}
 			},
 			templateUrl: '/js/partials/my-input.html'
