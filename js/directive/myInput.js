@@ -1,6 +1,7 @@
 'use strict';
 
 (function (w) {
+	
 	angular.module('app')
 
 	.directive('myInput', myInputDirective);
