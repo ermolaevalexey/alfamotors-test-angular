@@ -1,8 +1,12 @@
+'use strict';
+
 (function(w) {
   
-  var dirs = angular.module('app-directives', []);
+  angular.module('app')
   
-	dirs.directive('myForm', function () {
+	.directive('myForm', myFormDirective);
+
+	 function myFormDirective() {
 		return {
 	  		restrict: 'E',
 	  		scope: {},
@@ -14,21 +18,6 @@
 	  		},
 	  		templateUrl: '/js/partials/my-form.html',
 		}
-	});
-
-	dirs.directive('myInput', function () {
-		return {
-			require: '^myForm',
-			restrict: 'E',
-			transclude: true,
-			scope: {
-				name: '@name',
-				type: '@type',
-				required: '@required',
-				label: '@label',
-			},
-			templateUrl: '/js/partials/my-input.html'
-		}
-	});
+	}
 
 })(window);
