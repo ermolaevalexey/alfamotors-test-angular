@@ -12,8 +12,6 @@
 	  		scope: {},
 	  		transclude: true,
 	  		link: function(scope, el, attrs, ctrl, transclude) {
-	  			console.log(el, attrs, transclude);
-	  			console.log(el.find('form'));
 	  			el.find('form').append(transclude());
 	  		},
 	  		templateUrl: '/js/partials/my-form.html',
