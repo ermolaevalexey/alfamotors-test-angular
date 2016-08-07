@@ -1,0 +1,8 @@
+<div ng-if="$parent.$parent.showErrors">
+	<div ng-repeat="error in $parent.$parent.$parent.errors">
+		<div>
+			{{error[0]}}
+			{{error[1]}}
+		</div>
+	</div>
+</div>
