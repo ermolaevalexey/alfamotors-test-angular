@@ -1,8 +1,16 @@
 <div ng-if="$parent.$parent.showErrors">
-	<div ng-repeat="error in $parent.$parent.$parent.errors">
+	<div ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors" ng-if="errorKey === error">
+		{{errorKey}}
 		<div>
-			{{error[0]}}
-			{{error[1]}}
+			{{errorObj[0]}}
+			{{errorObj[1]}}
+		</div>
+	</div>
+	<div ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors.serverErrors" ng-if="errorKey === error">
+		{{errorKey}}
+		<div>
+			{{errorObj[0]}}
+			{{errorObj[1]}}
 		</div>
 	</div>
 </div>

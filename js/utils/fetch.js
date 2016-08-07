@@ -22,6 +22,10 @@ angular.module('app').factory('fetch', [ '$q', function($q){
 			errors['phone'] = ['already_in_use'];
 		}
 
+		if (phone == undefined) {
+			errors['phone'] = ['wrong_format'];
+		}
+
 		setTimeout(function(){
 			if(isEmpty(errors)){
 				deferred.resolve();
