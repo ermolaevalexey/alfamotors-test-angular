@@ -6,25 +6,25 @@
 
 	.directive('myInput', function() {
 		return {
-			require: '^myForm',
+			require: ['^myForm', 'ngModel'],
 			restrict: 'E',
 			transclude: true,
-			scope: {
-				name: '@name',
-				type: '@type',
-				label: '@label',
-			},
+			scope: true,
 			link: function (scope, el, attrs, ctrl) {
-				console.log(scope.$parent.$parent);
-				console.log(ctrl.user);
 				var input = el.find('input');
+				console.log(el);
 				if (attrs.required !== undefined) {
 					input.attr('required', true);
 				}
-				if (attrs.name === 'phone') {
-					input.attr('ui-mask', '+7 (999) 999-9999');
-					input.attr('ui-options', 'addDefaultPlaceholder(true)');
-				}
+				scope.name = attrs.name;
+				scope.type = attrs.type;
+				scope.label = attrs.label;
+				scope.ngModel = attrs.ngModel;
+				scope.required = attrs.required !== undefined ? 'required' : '';
+				scope.uiMask = attrs.uiMask !== undefined ? attrs.uiMask : '';
+				scope.uiMaskPlaceholder = attrs.uiMaskPlaceholder !== undefined ? 'ui-mask-placeholder' : '';
+				scope.uiMaskPlaceholderChar = attrs.uiMaskPlaceholderChar !== undefined ? attrs.uiMaskPlaceholderChar : '';
+				scope.modelViewValue = attrs.modelViewValue !== undefined ? true : '';
 			},
 			templateUrl: '/js/partials/my-input.html'
 		}

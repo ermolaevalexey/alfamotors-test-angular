@@ -13,10 +13,10 @@
                 <div class="well">
                     <my-form>
                         <my-errors></my-errors>
-                        <my-input name="username" type="username" label="Имя" required></my-input>
-                        <my-input name="password" type="password" label="Пароль" required></my-input>
-                        <my-input name="phone" type="phone" label="Телефон"></my-input>
-                        <my-input name="email" type="email" label="Email"></my-input>
+                        <my-input name="username" type="username" label="Имя" ng-model="$parent.$parent.user[name]" required></my-input>
+                        <my-input name="password" type="password" label="Пароль" ng-model="$parent.$parent.user[name]" required></my-input>
+                        <my-input name="phone" type="phone" label="Телефон" ng-model="$parent.$parent.user[name]" ui-mask="+7 (999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value></my-input>
+                        <my-input name="email" type="email" label="Email" ng-model="$parent.$parent.user[name]"></my-input>
                         <button class="btn btn-success btn-block">Отправить</button>
                     </my-form>
                 </div>
@@ -26,6 +26,7 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-mask/dist/mask.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/provider/uiMask.ConfigProvider.js"></script>
     <script src="js/controller/formController.js"></script>
     <script src="js/directive/myErrors.js"></script>
     <script src="js/directive/myForm.js"></script>

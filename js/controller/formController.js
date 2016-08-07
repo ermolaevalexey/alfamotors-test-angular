@@ -6,7 +6,9 @@
 
 	.controller('formController', ['$scope', 'fetch',
 		function($scope, fetch) {
-			$scope.user = {};
+			$scope.user = {
+				phone: ''
+			};
 			$scope.errors = {};
 			$scope.showErrors = false;
 

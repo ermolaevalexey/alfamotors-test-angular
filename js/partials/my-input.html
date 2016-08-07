@@ -1,4 +1,4 @@
 <div class="form-group">
-	<input name="{{name}}" type="{{type}}" ng-model="$parent.$parent.user[name]"> 
+	<input name="{{name}}" type="{{type}}" ui-mask="{{uiMask}}" ng-model="$parent.$parent.user[name]" {{required}}>
 	<label>{{label}}</label>
 </div>
