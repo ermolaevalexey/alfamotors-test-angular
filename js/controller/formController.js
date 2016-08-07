@@ -9,7 +9,7 @@
 			$scope.user = {};
 			$scope.errors = {};
 			$scope.showErrors = false;
-			//console.log(mainForm.getElementsByTagName('input'));
+			
 			$scope.checkField = function(name) {
 				var input = document.getElementsByName(name);
 				var patternPass = /(?=.*?[A-Z]{1,})(?=.*?[0-9]{1,})/g;
