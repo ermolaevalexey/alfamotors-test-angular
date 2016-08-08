@@ -36,7 +36,7 @@
 						}
 						break;
 					case 'email': 
-						if (!input[1].value.match(patternEmail)) {
+						if (input[1].value.length && !input[1].value.match(patternEmail)) {
 							$scope.errors['email'] = [
 								'wrong_email_format',
 								'please provide correct email address'
