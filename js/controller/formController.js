@@ -38,8 +38,8 @@
 					case 'email': 
 						if (!input[1].value.match(patternEmail)) {
 							$scope.errors['email'] = [
-								'missing_domain_zone',
-								'you shoud add domain zone to your email'
+								'wrong_email_format',
+								'please provide correct email address'
 							];
 						} else {
 							delete $scope.errors['email'];
