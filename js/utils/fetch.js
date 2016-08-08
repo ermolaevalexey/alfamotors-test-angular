@@ -1,6 +1,6 @@
 angular.module('app').factory('fetch', [ '$q', function($q){
 	return function (params) {
-		console.log(params);
+		
 		var deferred = $q.defer();
 		var username = params.username;
 		var password = params.password;

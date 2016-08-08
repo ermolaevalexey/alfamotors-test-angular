@@ -2,14 +2,6 @@
     border-color: #FA787E;
 }
 
-.ng-invalid.ng-dirty input {
-	border-color: #FA787E;
-}
-
-.ng-valid.ng-dirty {
-    border-color: #78FA89;
-}
-
 .ng-valid.ng-dirty input {
 	border-color: #78FA89;
 }
@@ -19,7 +11,7 @@
 	   -moz-transition: all .25s ease-in;
 	     -o-transition: all .25s ease-in;
 	        transition: all .25s ease-in;
-	color: #78FA89;
+	color: #3e8f3e;
 }
 
 .error-message {
