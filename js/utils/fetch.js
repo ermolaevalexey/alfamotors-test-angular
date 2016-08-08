@@ -18,7 +18,7 @@ angular.module('app').factory('fetch', [ '$q', function($q){
 			errors['email'] = ['email_in_use'];
 		}
 
-		if (phone == '+71234567890') {
+		if (phone == '9110346237') {
 			errors['phone'] = ['already_in_use'];
 		}
 

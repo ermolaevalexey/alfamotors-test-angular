@@ -1,0 +1,24 @@
+{
+	"username": [
+		"too_short", 
+		"you must provide at least 6 characters in your user name"
+	],
+	"password": [
+		"missing_characters",
+		"you must provide at least 1 digit and 1 capital letter"
+	],
+	"phone": [
+		"wrong_format",
+		"you must provide correct number"
+	],
+	"email": [
+		"wrong_email_format",
+		"please provide correct email address"
+	],
+	"serverErrors": {
+		"common": ["server_error"],
+		"phone": ["already_in_use"],
+		"email": ["email_in_use"]
+	},
+	"successMessage": "The data has been transfered succesfully!"
+}

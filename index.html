@@ -5,6 +5,7 @@
     <title>Alfamotors - test</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -12,7 +13,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="well">
                     <my-form>
-                        <my-errors error="common"></my-errors>
+                        <my-errors error="common" success="success"></my-errors>
                         <my-input name="username" type="username" label="Имя" ng-model="$parent.$parent.user[name]" required></my-input>
                         <my-errors error="username"></my-errors>
                         <my-input name="password" type="password" label="Пароль" ng-model="$parent.$parent.user[name]" required></my-input>
@@ -29,6 +30,7 @@
     </div>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-mask/dist/mask.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/directive/myErrors.js"></script>
     <script src="js/directive/myForm.js"></script>

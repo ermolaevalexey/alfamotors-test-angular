@@ -1,16 +1,13 @@
 <div ng-if="$parent.$parent.showErrors">
-	<div ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors" ng-if="errorKey === error">
-		{{errorKey}}
-		<div>
-			{{errorObj[0]}}
-			{{errorObj[1]}}
-		</div>
+	<div class="error-message" ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors" ng-if="errorKey === error">
+		<p>{{errorObj[0]}}<p>
+		<p>{{errorObj[1]}}</p>
 	</div>
-	<div ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors.serverErrors" ng-if="errorKey === error">
-		{{errorKey}}
-		<div>
-			{{errorObj[0]}}
-			{{errorObj[1]}}
-		</div>
+	<div class="error-message" ng-repeat="(errorKey, errorObj) in $parent.$parent.$parent.errors.serverErrors" ng-if="errorKey === error">
+		<p>{{errorObj[0]}}</p>
+		<p>{{errorObj[1]}}</p>
 	</div>
+</div>
+<div class="success-message" ng-if="!$parent.$parent.showErrors && $parent.$parent.successMessage && success">
+	<p>{{$parent.$parent.$parent.successMessage}}</p>
 </div>

@@ -7,7 +7,8 @@
 			return {
 				restrict: 'EA',
 				scope: {
-					error: '@error'
+					error: '@error',
+					success: '@success'
 				},
 				templateUrl: '/js/partials/my-errors.html',
 				link: function(scope, el, attrs, ctrl) {

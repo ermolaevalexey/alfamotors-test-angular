@@ -6,7 +6,7 @@
 
 	.directive('myInput', function() {
 		return {
-			require: ['^myForm', 'ngModel'],
+			require: ['^myForm', '?ngModel'],
 			restrict: 'E',
 			transclude: true,
 			scope: {

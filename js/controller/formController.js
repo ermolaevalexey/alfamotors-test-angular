@@ -4,12 +4,14 @@
 	
 	angular.module('app')
 
-	.controller('formController', ['$scope', 'fetch',
-		function($scope, fetch) {
+	.controller('formController', ['$scope', 'translationService', 'fetch',
+		function($scope, translationService, fetch) {
 			$scope.user = {};
 			$scope.errors = {};
+			$scope.successMessage = '';
 			$scope.showErrors = false;
-			
+			$scope.selectedLanguage = 'ru';
+			$scope.translation = translationService.getTranslation($scope, $scope.selectedLanguage);
 			$scope.checkField = function(name) {
 				var input = document.getElementsByName(name);
 				var patternPass = /(?=.*?[A-Z]{1,})(?=.*?[0-9]{1,})/g;
@@ -17,30 +19,29 @@
 				switch (name) {
 					case 'username':
 						if (input[1].value.length < 6) {
-							$scope.errors['username'] = [
-								'to_short',
-								'you must provide at least 6 characters in your user name'
-							];
+							$scope.errors['username'] = $scope.translation['username'];
+							console.log($scope.mainForm[name]);
 						}	else {
 							delete $scope.errors['username'];
 						}
 						break;
 					case 'password':
 						if (!input[1].value.match(patternPass)) {
-							$scope.errors['password'] = [
-								'missing_characters',
-								'you must provide at least 1 digit and 1 capital letter'
-							];
+							$scope.errors['password'] = $scope.translation['password'];							
 						} else {
 							delete $scope.errors['password'];
 						}
 						break;
+					/*case 'phone':
+						if (input[1].value.length && !input[1].value.match(patternPass)) {
+							$scope.errors['phone'] = $scope.translation['phone'];
+						} else {
+							delete $scope.errors['phone'];
+						}
+						break;	*/
 					case 'email': 
 						if (input[1].value.length && !input[1].value.match(patternEmail)) {
-							$scope.errors['email'] = [
-								'wrong_email_format',
-								'please provide correct email address'
-							];
+							$scope.errors['email'] = $scope.translation['email'];
 						} else {
 							delete $scope.errors['email'];
 						}
@@ -56,8 +57,18 @@
 					$scope.showErrors = true;
 				} else {
 					fetch($scope.user).then(
-    					function(success){ console.log(success);},
-    					function(errors){ $scope.errors.serverErrors = errors; console.log(errors); }
+    					function(success){ 
+    						$scope.showErrors = false;
+    						$scope.successMessage = $scope.translation['successMessage'];
+    						console.log($scope.successMessage);
+    					},
+    					function(errors){ 
+    						$scope.showErrors = true;
+    						for (var error in errors) {
+    							errors[error] = $scope.translation.serverErrors[error];
+    						}
+    						$scope.errors.serverErrors = errors; 
+    						console.log($scope.errors.serverErrors); }
 					);
 				}
 			};
