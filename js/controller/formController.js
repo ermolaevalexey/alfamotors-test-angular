@@ -12,7 +12,7 @@
 
 			//errors object
 			$scope.errors = {};
-
+			$scope.patternPass = /(?=.*?[A-Z]{1,})(?=.*?[0-9]{1,})/g;
 			$scope.successMessage = '';
 			$scope.showErrors = false;
 			$scope.selectedLanguage = 'ru';
@@ -21,28 +21,27 @@
 			//validating form fields
 			$scope.checkField = function(name) {
 				var input = $scope.mainForm[name];
-				var patternPass = /(?=.*?[A-Z]{1,})(?=.*?[0-9]{1,})/g;
+				var patternPass = $scope.patternPass;
 				var patternEmail =  /(.*)@(.*)\.[a-z]{2,3}/;
 				var patternPhone = /\+7\s\(\d{3}\)\s\d{3}\-\d{4}/;
 				switch (name) {
 					case 'username':
-						if (input.$modelValue && input.$modelValue.length < 6) {
+						if (input.$invalid) {
 							$scope.errors['username'] = $scope.translation['username'];
 						}	else {
 							delete $scope.errors['username'];
 						}
 						break;
 					case 'password':
-						if (input.$modelValue && !input.$modelValue.match(patternPass)) {
+						if (input.$invalid) {
 							$scope.errors['password'] = $scope.translation['password'];							
 						} else {
 							delete $scope.errors['password'];
 						}
 						break;
 					case 'phone':
-						
 						if (input.$viewValue.length && !input.$viewValue.match(patternPhone)) {
-							$scope.errors['phone'] = $scope.translation['phone'];
+								 $scope.errors['phone'] = $scope.translation['phone'];
 						} else {
 							delete $scope.errors['phone'];
 						}

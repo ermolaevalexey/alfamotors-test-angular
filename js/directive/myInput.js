@@ -13,7 +13,10 @@
 				name: '@name',
 				type: '@type',
 				label: '@label',
-				uiMask: '@uiMask'
+				uiMask: '@uiMask',
+				minlength: '@minLength',
+				ngMinlength: '@ngMinlength',
+				ngPattern: '@ngPattern'
 			},
 			link: function (scope, el, attrs, ctrl) {
 				var input = el.find('input');

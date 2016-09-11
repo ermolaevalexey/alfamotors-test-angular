@@ -1,4 +1,4 @@
 <div class="form-group">
 	<label>{{label}}</label>
-	<input name="{{name}}" type="{{type}}" class="form-control" ui-mask="{{uiMask}}" ng-model="$parent.$parent.user[name]" ng-blur="$parent.$parent.checkField(name)">
+	<input name="{{name}}" type="{{type}}" class="form-control" ui-mask="{{uiMask}}" ng-model="$parent.$parent.user[name]" minlength="{{minlength}}" ng-keyup="$parent.$parent.checkField(name)" ng-minlength="{{ngMinlength}}" ng-pattern="{{ngPattern}}">
 </div>

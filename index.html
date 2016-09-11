@@ -14,9 +14,9 @@
                 <div class="well">
                     <my-form>
                         <my-errors error="common" success="success"></my-errors>
-                        <my-input name="username" type="username" label="Имя" ng-model="$parent.$parent.user[name]" required></my-input>
+                        <my-input name="username" type="username" label="Имя" ng-model="$parent.$parent.user[name]" minlength="6" ng-minlength="6" required></my-input>
                         <my-errors error="username"></my-errors>
-                        <my-input name="password" type="password" label="Пароль" ng-model="$parent.$parent.user[name]" required></my-input>
+                        <my-input name="password" type="password" label="Пароль" ng-model="$parent.$parent.user[name]" ng-pattern="$parent.$parent.patternPass" required></my-input>
                         <my-errors error="password"></my-errors>
                         <my-input name="phone" type="phone" label="Телефон" ng-model="$parent.$parent.user[name]" ui-mask="+7 (999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value></my-input>
                         <my-errors error="phone"></my-errors>
