@@ -28,6 +28,28 @@
             </div>
         </div>
     </div>
+    <script>
+        var promise = new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://api.hh.ru/vacancies/17849512/similar_vacancies', true);
+            xhr.send();
+            resolve(xhr);
+        });
+
+        promise
+            .then(result => {
+                var data = result.responseText;
+                console.log(data);
+            },
+
+            error => {
+                console.log(error);
+            }
+        );
+        
+        var temlate = '<div></div>';
+    
+    </script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-mask/dist/mask.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
